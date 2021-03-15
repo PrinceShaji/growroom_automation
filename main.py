@@ -59,10 +59,12 @@ try:
                 print("Relay turned OFF")
 
             print(f"Humidity is {humidity}, Temperature is {temperature}")
-            sleep(0.5)
+            sleep(5)
         else:
             print("Failed to load data.")
 except KeyboardInterrupt:
+    GPIO.cleanup()
+finally:
     GPIO.cleanup()
 
 
